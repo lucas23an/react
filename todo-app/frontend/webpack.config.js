@@ -12,7 +12,7 @@ module.exports = {
         contentBase: './public'
     },
     resolve: {
-        extensions: ['', '.js', 'jsx'],
+        extensions: ['', '.js', '.jsx'],
         alias: {
             modules: __dirname + '/node_modules'
         }
@@ -24,7 +24,7 @@ module.exports = {
         loaders: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
-            exlude: /node_modules/,
+            exclude: /node_modules/,
             query: {
                 presets: ['es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
@@ -33,7 +33,7 @@ module.exports = {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }, {
-            test: /\.woff|.woff2|.tff|.eot|.svg*.*$/,
+            test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
             loader: 'file'
         }]
     }
